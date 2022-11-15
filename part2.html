@@ -1,0 +1,45 @@
+﻿< !DOCTYPE html >
+< !--
+    Ce Zhang
+javascript1 assignment
+part2 -> use javascript to draw rectangle
+-->
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Wei Mao</title>
+</head>
+<body>
+    <canvas id="rec" width="500" height="500">
+        <script>
+
+                        <!--put your script tags here to fullfill the assignment-->
+                        var canvas = document.getElementById("rec");
+                        var recCanvas = canvas.getContext("2d");
+
+                        //set random color to rec
+	function getColor() {
+		var R = Math.floor((Math.random() * 256)).toString(16);
+                        var G = Math.floor((Math.random() * 256)).toString(16);
+                        var B = Math.floor((Math.random() * 256)).toString(16);
+                        return "#" + R + G + B;
+                    }
+                    //x y location
+	function recLocation() {
+                            let location = Math.random() * 300 + 1;
+                        return location;
+                    }
+                    //wide, height
+	function recSize() {
+                            let size = Math.random() * 100 + 1;
+                        return size;
+                    }
+                    //set rec canvas
+	for(var i = 0; i < 20; i++) {
+                            recCanvas.fillStyle = getColor();
+                        recCanvas.fillRect(recLocation(), recLocation(), recSize(), recSize());
+                    }
+        </script>
+    </canvas>
+</body>
+</html>

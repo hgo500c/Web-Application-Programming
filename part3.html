@@ -1,0 +1,82 @@
+﻿
+<!DOCTYPE html>
+<!--
+  Ce Zhang
+
+-->
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+
+    <title>Wei Mao</title>
+
+</head>
+<style>
+
+    #boxR {
+        background-color: red;
+        width: 100px;
+        height: 100px;
+        position: absolute;
+    }
+
+    #boxG {
+        background-color: green;
+        width: 100px;
+        height: 100px;
+        position: absolute;
+    }
+
+    #boxB {
+        background-color: blue;
+        width: 100px;
+        height: 100px;
+        position: absolute;
+    }
+</style>
+<body>
+    <div id="boxR"></div>
+    <div id="boxG"></div>
+    <div id="boxB"></div>
+
+    <script>
+    <!--put your script tags here to fullfill the assignment-->
+	function randomPosition() {
+		var position = Math.random() * 300;
+		return position;
+	}
+
+	var boxRed = randomPosition();
+	var boxGreen = randomPosition();
+	var boxBlue = randomPosition();
+
+	function randomSpeed() {
+		var speed = Math.random() * 5 + 1;
+		return speed;
+	}
+
+	var speedR = randomSpeed();
+	var speedG = randomSpeed();
+	var speedB = randomSpeed();
+
+	document.getElementById("boxR").style.top = randomPosition() + "px";
+  	document.getElementById("boxG").style.top = randomPosition() + "px";
+  	document.getElementById("boxB").style.top = randomPosition() + "px";
+
+	document.getElementById("boxR").style.left = boxRed + "px";
+  	document.getElementById("boxG").style.left = boxGreen + "px";
+    document.getElementById("boxB").style.left = boxBlue + "px";
+
+	function move() {
+		document.getElementById("boxR").style.left = (boxRed += speedR) + "px";
+		document.getElementById("boxG").style.left = (boxGreen += speedG) + "px";
+		document.getElementById("boxB").style.left = (boxBlue += speedB) + "px";
+	}
+
+	setInterval(move, 60);
+
+    </script>
+</body>
+</html>
+
+ml>
